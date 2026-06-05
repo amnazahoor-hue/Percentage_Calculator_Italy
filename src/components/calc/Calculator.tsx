@@ -5,6 +5,7 @@ import { RotateCcw } from "lucide-react";
 import { CalcDisplay } from "@/components/calc/CalcDisplay";
 import { CalcField } from "@/components/calc/CalcField";
 import { CalcKeypad } from "@/components/calc/CalcKeypad";
+import { CalcShareActions } from "@/components/calc/CalcShareActions";
 import { TypeToggle } from "@/components/calc/TypeToggle";
 import { NeuKey } from "@/components/calc/NeuKey";
 import {
@@ -159,7 +160,7 @@ export function Calculator({
       className={cn(
         "neu-panel w-full scroll-mt-24",
         isHero &&
-          "neu-panel-hero mx-auto flex max-w-full min-h-0 flex-1 flex-col p-3.5 sm:p-4",
+          "neu-panel-hero hero-calc-panel mx-auto flex max-w-full min-h-0 flex-col p-3.5 sm:p-4 lg:p-3.5",
         !isHero && "max-w-none",
         isDense && !isHero && "rounded-[20px] p-3 sm:p-3.5",
         variant === "default" && "max-w-md p-4 sm:p-5 lg:max-w-none"
@@ -205,7 +206,7 @@ export function Calculator({
       <div
         className={cn(
           "grid grid-cols-2 gap-2",
-          isHero ? "mb-3 gap-2.5" : isDense ? "mb-2 gap-2" : "mb-3 gap-3"
+          isHero ? "mb-2.5 gap-2.5 lg:mb-3 lg:gap-2.5" : isDense ? "mb-2 gap-2" : "mb-3 gap-3"
         )}
       >
         <CalcField
@@ -253,28 +254,26 @@ export function Calculator({
         </p>
       )}
 
-      <div className={cn(isHero && "md:hidden")}>
-        <CalcKeypad
-          onKey={handleKey}
-          onBackspace={handleBackspace}
-          onClear={handleClearField}
-          disabled={loading}
-          compact={isDense}
-          hero={isHero}
-        />
-      </div>
+      <CalcKeypad
+        onKey={handleKey}
+        onBackspace={handleBackspace}
+        onClear={handleClearField}
+        disabled={loading}
+        compact={isDense}
+        hero={isHero}
+      />
 
       <div
         className={cn(
           "grid grid-cols-[1fr_auto] gap-2",
-          isHero ? "mt-auto pt-3" : "mt-2"
+          isHero ? "mt-2.5 pt-2.5 lg:mt-3 lg:pt-3" : "mt-2"
         )}
       >
         <NeuKey
           className={cn(
             "neu-key--primary w-full font-semibold",
             isHero
-              ? "!min-h-[52px] !text-base"
+              ? "!min-h-[48px] !text-base lg:!min-h-[50px]"
               : isDense
                 ? "!min-h-[44px] !text-sm"
                 : "!min-h-[52px] !text-base",
@@ -291,7 +290,7 @@ export function Calculator({
           className={cn(
             "flex items-center justify-center gap-1 font-medium text-muted",
             isHero
-              ? "!min-h-[52px] !min-w-[3.25rem] !px-2 !text-xs"
+              ? "!min-h-[48px] !min-w-[3.25rem] !px-2 !text-xs lg:!min-h-[50px]"
               : isDense
                 ? "!min-h-[40px] !text-xs"
                 : "!min-h-[52px] !min-w-[7.5rem] !text-sm"
@@ -302,10 +301,21 @@ export function Calculator({
           title="Clear"
         >
           <RotateCcw className="h-4 w-4 shrink-0" aria-hidden="true" />
-          {!isHero && <span>Clear</span>}
-          {isHero && <span className="hidden sm:inline">Clear</span>}
+          <span>Clear</span>
         </NeuKey>
       </div>
+
+      {result && !loading && (
+        <CalcShareActions
+          mode={mode}
+          baseVariant={baseVariant}
+          input1={input1}
+          input2={input2}
+          result={result}
+          hero={isHero}
+          compact={isDense}
+        />
+      )}
     </div>
   );
 }

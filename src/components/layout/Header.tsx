@@ -112,7 +112,7 @@ function NavItem({
       href={link.href}
       onClick={onClick}
       className={cn(
-        "type-nav relative flex flex-1 items-center justify-center whitespace-nowrap rounded-xl px-3 py-2.5 transition-colors duration-200 lg:px-4",
+        "type-nav relative flex flex-1 items-center justify-center whitespace-nowrap rounded-xl px-3 py-2.5 transition-colors duration-200 xl:px-4",
         active ? "text-on-primary" : "text-muted hover:text-text"
       )}
     >
@@ -196,11 +196,11 @@ export function Header() {
 
         {/* Full-width bar */}
         <div className={cn(PAGE_GUTTER, PAGE_INNER)}>
-          <div className="grid h-[4.5rem] w-full grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-6 lg:h-[5rem] lg:gap-8">
+          <div className="grid h-[4.5rem] w-full grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-4 md:gap-5 xl:h-[5rem] xl:gap-8">
             {/* Logo — left edge */}
             <Link
               href="/"
-              className="group flex shrink-0 items-center gap-3 rounded-2xl py-1 pr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-safe:transition-transform motion-safe:hover:scale-[1.02] md:gap-4"
+              className="header-logo group flex shrink-0 items-center gap-3 rounded-2xl py-1 pr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-safe:transition-transform motion-safe:hover:scale-[1.02] md:gap-4"
               aria-label="Percentuale — Back to home"
             >
               <span className="relative flex shrink-0 items-center justify-center">
@@ -214,7 +214,7 @@ export function Header() {
 
             {/* Nav — spans entire center column */}
             <nav
-              className="hidden min-w-0 lg:block"
+              className="hidden min-w-0 xl:block"
               aria-label="Main navigation"
             >
               <div
@@ -235,7 +235,7 @@ export function Header() {
             </nav>
 
             {/* Actions — right edge */}
-            <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-2.5 md:gap-3">
+            <div className="header-actions flex shrink-0 items-center justify-end gap-2 sm:gap-2.5 md:gap-3">
               <div
                 className={cn(
                   "hidden items-center gap-2 rounded-2xl border border-border/70 bg-neu-bg/80 p-1.5 md:flex",
@@ -259,7 +259,7 @@ export function Header() {
               <Link
                 href="/#strumento"
                 className={cn(
-                  "type-btn hidden items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm text-on-primary sm:inline-flex lg:rounded-2xl lg:px-6 lg:py-3",
+                  "type-btn hidden items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm text-on-primary sm:inline-flex md:px-5 xl:rounded-2xl xl:px-6 xl:py-3",
                   "shadow-[0_4px_16px_rgba(79,70,229,0.35)] transition-all duration-200",
                   "hover:bg-primary-hover hover:shadow-[0_6px_20px_rgba(79,70,229,0.45)]",
                   "motion-safe:hover:scale-[1.02] active:scale-[0.98]",
@@ -273,7 +273,7 @@ export function Header() {
               <button
                 type="button"
                 className={cn(
-                  "neu-key inline-flex !min-h-[42px] !w-[42px] items-center justify-center !rounded-xl lg:hidden",
+                  "neu-key inline-flex !min-h-[42px] !w-[42px] items-center justify-center !rounded-xl xl:hidden",
                   menuOpen && "neu-key--primary text-on-primary"
                 )}
                 aria-expanded={menuOpen}
@@ -312,7 +312,7 @@ export function Header() {
         {menuOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm xl:hidden"
               initial={reducedMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={reducedMotion ? undefined : { opacity: 0 }}
@@ -325,7 +325,7 @@ export function Header() {
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"
-              className="fixed inset-x-4 top-[4.75rem] z-50 mx-auto max-h-[calc(100vh-5.5rem)] max-w-[1920px] overflow-hidden rounded-2xl border border-shell-border bg-shell-bg shadow-[var(--shadow-calc)] sm:inset-x-6 md:inset-x-8 lg:hidden lg:px-10 xl:inset-x-14 2xl:inset-x-20"
+              className="fixed inset-x-4 top-[4.75rem] z-50 mx-auto max-h-[calc(100vh-5.5rem)] max-w-[1920px] overflow-hidden rounded-2xl border border-shell-border bg-shell-bg shadow-[var(--shadow-calc)] sm:inset-x-6 md:inset-x-8 xl:hidden 2xl:inset-x-20"
               initial={reducedMotion ? false : { opacity: 0, y: -12, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={reducedMotion ? undefined : { opacity: 0, y: -8, scale: 0.98 }}

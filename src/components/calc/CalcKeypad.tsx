@@ -29,7 +29,7 @@ export function CalcKeypad({
   hero = false,
 }: CalcKeypadProps) {
   const keyClass = hero
-    ? "!min-h-[40px] !text-base !rounded-xl"
+    ? "!min-h-[40px] !text-base !rounded-xl lg:!min-h-[38px]"
     : compact
       ? "!min-h-[38px] !text-sm !rounded-[14px]"
       : "";
@@ -38,7 +38,7 @@ export function CalcKeypad({
     <div
       className={cn(
         "grid grid-cols-3",
-        hero ? "gap-1.5" : compact ? "gap-1.5" : "gap-2 sm:gap-2.5"
+        hero ? "gap-1.5 lg:gap-1.5" : compact ? "gap-1.5" : "gap-2 sm:gap-2.5"
       )}
       role="group"
       aria-label="Numeric keypad"
@@ -74,18 +74,20 @@ export function CalcKeypad({
           );
         })
       )}
-      <NeuKey
-        className={cn(
-          "col-span-3",
-          hero ? "!min-h-[32px] !text-xs" : compact ? "!min-h-[36px] !text-xs" : "!text-sm"
-        )}
-        variant="accent"
-        disabled={disabled}
-        onClick={onClear}
-        aria-label="Clear selected field"
-      >
-        Clear field
-      </NeuKey>
+      {!hero && (
+        <NeuKey
+          className={cn(
+            "col-span-3",
+            compact ? "!min-h-[36px] !text-xs" : "!text-sm"
+          )}
+          variant="accent"
+          disabled={disabled}
+          onClick={onClear}
+          aria-label="Clear selected field"
+        >
+          Clear field
+        </NeuKey>
+      )}
     </div>
   );
 }

@@ -10,7 +10,7 @@ export const HERO_INNER = PAGE_INNER;
 
 /** Calcolatrice hero — larghezza colonna destra, altezza minima. */
 export const HERO_CALC_WIDTH =
-  "relative z-10 flex w-full max-w-full flex-col lg:max-w-[min(100%,32rem)] xl:max-w-[min(100%,34rem)]";
+  "relative z-10 flex w-full max-w-full flex-col xl:max-w-[min(100%,30rem)] 2xl:max-w-[min(100%,34rem)]";
 
-export const HERO_CALC_MIN_H =
-  "min-h-[26rem] sm:min-h-[28rem] lg:min-h-[30rem] xl:min-h-[32rem]";
+export const HERO_CALC_MAX_H =
+  "max-h-[calc(100svh-5rem)] sm:max-h-[calc(100svh-5.5rem)] xl:max-h-full";

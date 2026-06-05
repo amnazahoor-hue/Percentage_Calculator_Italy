@@ -25,7 +25,7 @@ export function Step1Mock() {
   const tabs = ["Percent", "Increase", "Decrease", "Difference"];
   return (
     <div className="how-panel-mock flex flex-col gap-2">
-      <MockShell className="rotate-[-2deg]">
+      <MockShell className="rotate-0 md:rotate-[-2deg]">
         <p className="mb-2 text-[10px] font-semibold text-muted">Calculation type</p>
         <div className="flex flex-wrap gap-1">
           {tabs.map((tab, i) => (
@@ -34,7 +34,7 @@ export function Step1Mock() {
               className={cn(
                 "rounded-lg px-2 py-1 text-[9px] font-semibold",
                 i === 0
-                  ? "bg-primary text-on-primary"
+                  ? "bg-primary !text-white"
                   : "bg-neu-bg text-muted"
               )}
             >
@@ -43,7 +43,7 @@ export function Step1Mock() {
           ))}
         </div>
         <div className="mt-2 flex gap-1">
-          <span className="flex-1 rounded-lg bg-primary px-2 py-1.5 text-center text-[9px] font-semibold text-on-primary">
+          <span className="flex-1 rounded-lg bg-primary px-2 py-1.5 text-center text-[9px] font-semibold !text-white">
             X is % of Y
           </span>
           <span className="flex-1 rounded-lg bg-neu-bg px-2 py-1.5 text-center text-[9px] text-muted">
@@ -51,9 +51,9 @@ export function Step1Mock() {
           </span>
         </div>
       </MockShell>
-      <div className="flex items-center justify-center gap-2 text-primary/80">
+      <div className="how-mock-cta flex items-center justify-center gap-2 text-white">
         <Percent className="h-5 w-5" aria-hidden="true" />
-        <span className="text-xs font-medium text-on-primary/70">Choose a mode</span>
+        <span className="text-xs font-medium !text-white">Choose a mode</span>
       </div>
     </div>
   );
@@ -62,7 +62,7 @@ export function Step1Mock() {
 export function Step2Mock() {
   return (
     <div className="how-panel-mock relative flex flex-col items-center gap-3">
-      <MockShell className="w-full rotate-[1deg]">
+      <MockShell className="w-full rotate-0 md:rotate-[1deg]">
         <div className="mb-2 flex items-center justify-between">
           <span className="text-[10px] font-semibold text-muted">Input</span>
           <span className="rounded-md bg-primary/10 px-1.5 py-0.5 text-[9px] font-bold text-primary">
@@ -94,7 +94,7 @@ export function Step2Mock() {
 export function Step3Mock() {
   return (
     <div className="how-panel-mock flex flex-col gap-2">
-      <MockShell className="rotate-[-1deg]">
+      <MockShell className="rotate-0 md:rotate-[-1deg]">
         <p className="text-[10px] text-muted">What % is X of Y?</p>
         <p className="mt-1 text-right font-mono text-2xl font-bold text-primary">31.25%</p>
         <p className="mt-2 border-t border-border/60 pt-2 text-center font-mono text-[9px] text-muted">

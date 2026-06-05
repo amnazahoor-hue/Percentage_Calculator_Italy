@@ -1,6 +1,7 @@
 "use client";
 
 import { forwardRef } from "react";
+import { useKeypadOnly } from "@/hooks/useKeypadOnly";
 import { cn } from "@/lib/cn";
 
 export interface CalcFieldProps {
@@ -52,6 +53,8 @@ export const CalcField = forwardRef<HTMLInputElement, CalcFieldProps>(
     },
     ref
   ) => {
+    const keypadOnly = useKeypadOnly();
+
     return (
       <div className="min-w-0">
         <label
@@ -72,9 +75,10 @@ export const CalcField = forwardRef<HTMLInputElement, CalcFieldProps>(
           ref={ref}
           id={id}
           type="text"
-          inputMode="decimal"
+          inputMode={keypadOnly ? "none" : "decimal"}
           autoComplete="off"
           enterKeyHint={onEnter ? "done" : "next"}
+          readOnly={keypadOnly}
           disabled={disabled}
           value={value}
           placeholder={placeholder}
@@ -93,8 +97,9 @@ export const CalcField = forwardRef<HTMLInputElement, CalcFieldProps>(
             "w-full rounded-xl border bg-surface font-mono font-semibold tabular-nums text-text transition-all",
             "placeholder:font-sans placeholder:font-normal placeholder:text-muted/70",
             "focus:outline-none focus:ring-2",
+            keypadOnly && "cursor-pointer caret-transparent",
             hero
-              ? "min-h-[3rem] px-3 py-2.5 text-base sm:min-h-[3.25rem] sm:py-3"
+              ? "min-h-[3rem] px-3 py-2.5 text-base sm:min-h-[3.25rem] sm:py-3 lg:min-h-[3.125rem] lg:px-3 lg:py-2.5 lg:text-base"
               : compact
                 ? "px-2.5 py-2.5 text-base"
                 : "px-3 py-3 text-lg",

@@ -8,7 +8,7 @@ export function HeroCalcBackdrop({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "pointer-events-none absolute left-1/2 top-1/2 z-0 h-[min(130%,36rem)] w-[min(130%,36rem)] -translate-x-1/2 -translate-y-1/2",
+        "hero-calc-backdrop pointer-events-none absolute left-1/2 top-1/2 z-0 h-[min(130%,36rem)] w-[min(130%,36rem)] -translate-x-1/2 -translate-y-1/2",
         className
       )}
       aria-hidden="true"

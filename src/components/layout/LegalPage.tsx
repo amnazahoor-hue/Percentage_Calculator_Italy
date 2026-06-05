@@ -17,8 +17,7 @@ export function LegalPage({ title, sections }: LegalPageProps) {
     <article className="py-12 md:py-16">
       <Container size="narrow">
         <FadeIn>
-          <p className="type-eyebrow text-muted">Last updated: May 2026</p>
-          <h1 className="mt-2 text-display-h1 text-text">{title}</h1>
+          <h1 className="text-display-h1 text-text">{title}</h1>
         </FadeIn>
         <div className="mt-10 space-y-10">
           {sections.map((section, index) => (

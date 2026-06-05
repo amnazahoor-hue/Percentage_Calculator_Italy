@@ -46,7 +46,7 @@ export function CalcDisplay({
       className={cn(
         hero ? "neu-inset-hero" : "neu-inset",
         hero
-          ? "mb-3 min-h-[5.25rem] p-3 sm:min-h-[5.75rem] sm:p-3.5"
+          ? "mb-3 min-h-[5rem] p-3 sm:min-h-[5.5rem] sm:p-3.5 lg:mb-3 lg:min-h-[5rem] lg:p-3"
           : compact
             ? "mb-2 rounded-2xl p-2.5"
             : "mb-4 rounded-[20px] p-4"

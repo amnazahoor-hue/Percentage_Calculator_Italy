@@ -24,7 +24,12 @@ export function TypeToggle({
   hint,
 }: TypeToggleProps) {
   return (
-    <div className={cn("space-y-2", hero ? "mb-3" : compact ? "mb-2" : "mb-3")}>
+    <div
+      className={cn(
+        "space-y-2",
+        hero ? "mb-3 lg:mb-3 lg:space-y-2" : compact ? "mb-2" : "mb-3"
+      )}
+    >
       {hint && (
         <p
           className={cn(
@@ -59,7 +64,7 @@ export function TypeToggle({
                   : "rounded-2xl px-2 py-2 text-xs sm:text-sm",
               "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary",
               mode === item.id
-                ? "bg-primary text-on-primary shadow-sm"
+                ? "bg-primary !text-white shadow-sm"
                 : "bg-transparent text-muted hover:text-text"
             )}
           >
@@ -78,11 +83,11 @@ export function TypeToggle({
             className={cn(
               "flex-1",
               hero
-                ? "!min-h-[40px] !text-[11px] sm:!text-xs"
+                ? "!min-h-[40px] !text-[11px] sm:!text-xs lg:!min-h-[38px]"
                 : compact
                   ? "!min-h-[36px] !text-[10px]"
                   : "!text-xs sm:!text-sm",
-              baseVariant === "ratio" && "neu-key--primary"
+              baseVariant === "ratio" && "neu-key--primary !text-white"
             )}
             aria-pressed={baseVariant === "ratio"}
             onClick={() => onBaseVariantChange("ratio")}
@@ -93,11 +98,11 @@ export function TypeToggle({
             className={cn(
               "flex-1",
               hero
-                ? "!min-h-[40px] !text-[11px] sm:!text-xs"
+                ? "!min-h-[40px] !text-[11px] sm:!text-xs lg:!min-h-[38px]"
                 : compact
                   ? "!min-h-[36px] !text-[10px]"
                   : "!text-xs sm:!text-sm",
-              baseVariant === "of" && "neu-key--primary"
+              baseVariant === "of" && "neu-key--primary !text-white"
             )}
             aria-pressed={baseVariant === "of"}
             onClick={() => onBaseVariantChange("of")}

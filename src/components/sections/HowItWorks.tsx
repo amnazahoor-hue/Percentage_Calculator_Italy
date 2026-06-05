@@ -59,9 +59,16 @@ export function HowItWorks() {
               </p>
             </header>
 
-            <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+            <div className="how-steps-grid mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
               {steps.map((step, index) => (
-                <FadeIn key={step.number} delay={index * 0.1}>
+                <FadeIn
+                  key={step.number}
+                  delay={index * 0.1}
+                  className={cn(
+                    "h-full",
+                    index === 2 && "how-step-item--center-tablet"
+                  )}
+                >
                   <article className="how-step-card flex h-full min-h-[22rem] flex-col max-md:items-center max-md:text-center sm:min-h-[24rem]">
                     <div className="flex w-full items-start justify-between gap-3 max-md:flex-col max-md:items-center">
                       <h3 className="how-step-title text-white">

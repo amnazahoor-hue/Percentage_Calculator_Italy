@@ -1,6 +1,8 @@
 export const siteConfig = {
   name: "Percentuale",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://percentuale.it",
+  contactEmail: "contact@percentuale.it",
+  tagline: "Free online percentage calculator with step-by-step formulas",
   locale: "en_US",
   defaultTitle:
     "Online Percentage Calculator — 3D, Free | Percentuale",

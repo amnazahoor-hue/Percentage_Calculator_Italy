@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { HeroCalcBackdrop } from "@/components/sections/HeroCalcBackdrop";
 import { HeroPercentDecor } from "@/components/sections/HeroPercentDecor";
 import {
-  HERO_CALC_MIN_H,
+  HERO_CALC_MAX_H,
   HERO_CALC_WIDTH,
   HERO_GUTTER,
   HERO_INNER,
@@ -35,7 +35,8 @@ export function Hero() {
         "hero-section-bg relative isolate flex w-full",
         "min-h-[calc(100svh-4.25rem)] border-b border-border/40",
         "overflow-x-clip py-8 sm:py-10",
-        "lg:h-[calc(100svh-5rem)] lg:max-h-[calc(100svh-5rem)] lg:overflow-hidden lg:py-6 xl:py-8"
+        "md:min-h-0 md:py-10",
+        "xl:h-[calc(100svh-5rem)] xl:max-h-[calc(100svh-5rem)] xl:overflow-hidden xl:pt-2 xl:pb-5 2xl:pt-3 2xl:pb-6"
       )}
       aria-labelledby="hero-heading"
     >
@@ -49,11 +50,11 @@ export function Hero() {
         className={cn(
           HERO_GUTTER,
           HERO_INNER,
-          "relative z-[1] flex w-full flex-1 flex-col justify-center lg:min-h-0"
+          "relative z-[1] flex w-full flex-1 flex-col justify-center xl:min-h-0"
         )}
       >
-        <div className="grid w-full min-h-0 grid-cols-1 items-center gap-8 lg:h-full lg:grid-cols-2 lg:gap-10 xl:gap-12">
-          <div className="hero-copy-col flex min-w-0 w-full flex-col justify-center lg:py-4">
+        <div className="hero-grid grid w-full min-h-0 grid-cols-1 items-center gap-8 md:gap-10 xl:grid-cols-2 xl:items-start xl:gap-8 2xl:gap-12">
+          <div className="hero-copy-col flex min-h-0 w-full min-w-0 flex-col justify-center xl:justify-start xl:py-0 2xl:py-2">
             <FadeIn className="hero-copy-stack">
               <p className="hero-badge-pill type-eyebrow">
                 <span className="hero-badge-icon" aria-hidden="true">
@@ -62,10 +63,12 @@ export function Hero() {
                 The Best Free Percentage Tool
               </p>
 
-              <div className="hero-headline-wrap">
-                <HeroPercentDecor />
+              <div className="hero-headline-block">
                 <h1 id="hero-heading" className="hero-headline">
-                  <span className="hero-headline-line">Calculate</span>
+                  <span className="hero-headline-line hero-headline-line--lead">
+                    <span className="hero-headline-word">Calculate</span>
+                    <HeroPercentDecor className="hero-percent-decor--inline" />
+                  </span>
                   <span className="hero-headline-line">Any</span>
                   <span className="hero-headline-line">Percentage</span>
                   <span className="hero-headline-line">
@@ -115,30 +118,22 @@ export function Hero() {
             </FadeIn>
           </div>
 
-          <div className="flex min-h-0 w-full min-w-0 items-center justify-center overflow-visible lg:justify-end">
+          <div className="flex min-h-0 w-full min-w-0 items-start justify-center xl:justify-end">
             <div
               className={cn(
-                "hero-calc-stage relative flex w-full items-center justify-center overflow-visible lg:justify-end",
+                "hero-calc-stage relative flex w-full max-h-full items-start justify-center xl:justify-end",
                 HERO_CALC_WIDTH,
-                HERO_CALC_MIN_H
+                HERO_CALC_MAX_H
               )}
             >
               <HeroCalcBackdrop />
               <FadeIn
                 delay={0.12}
-                className={cn(
-                  "relative z-10 flex h-full w-full max-w-full flex-col",
-                  HERO_CALC_MIN_H
-                )}
+                className="relative z-10 flex w-full max-w-full flex-col"
               >
-                <div
-                  className={cn(
-                    "calc-shell calc-shell--animated flex h-full min-h-0 flex-1 flex-col",
-                    HERO_CALC_MIN_H
-                  )}
-                >
-                  <div className="calc-shell-inner flex min-h-0 flex-1 flex-col overflow-hidden">
-                    <div className="flex min-h-0 flex-1 flex-col p-2 sm:p-3">
+                <div className="calc-shell flex w-full flex-col">
+                  <div className="calc-shell-inner flex flex-col">
+                    <div className="hero-calc-body p-2.5 sm:p-3 xl:p-2">
                       <Calculator variant="hero" />
                     </div>
                   </div>
