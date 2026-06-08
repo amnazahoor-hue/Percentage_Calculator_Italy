@@ -1329,20 +1329,14 @@ h4 {
   flex-shrink: 0;
 }
 
-.faq-content-col {
+.faq-content-intro {
   display: flex;
   width: 100%;
   max-width: 36rem;
   flex-direction: column;
-  min-width: 0;
-}
-
-.faq-content-intro {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+  min-width: 0;
 }
 
 .faq-heading {
@@ -1351,11 +1345,6 @@ h4 {
   line-height: 1.12;
   letter-spacing: 0.03em;
   text-wrap: balance;
-}
-
-.faq-accordion-wrap {
-  width: 100%;
-  max-width: 36rem;
 }
 
 /* Solo mobile: contenuto centrato */
@@ -1374,14 +1363,10 @@ h4 {
     margin-inline: auto;
   }
 
-  .faq-content-col {
+  .faq-content-intro {
     align-items: center;
     text-align: center;
     margin-inline: auto;
-  }
-
-  .faq-content-intro {
-    align-items: center;
   }
 
   .faq-badge {
@@ -1398,6 +1383,8 @@ h4 {
 }
 
 .faq-accordion-wrap {
+  width: 100%;
+  max-width: 36rem;
   margin-top: 2rem;
 }
 
@@ -1461,7 +1448,7 @@ h4 {
   object-position: center 42%;
 }
 
-.faq-content-col .faq-accordion-item {
+.faq-accordion-wrap .faq-accordion-item {
   flex-shrink: 0;
 }
 
@@ -1497,7 +1484,7 @@ h4 {
     justify-content: center;
   }
 
-  .faq-content-col {
+  .faq-content-intro {
     align-items: flex-start;
     text-align: left;
     margin-inline: auto;
@@ -1509,7 +1496,6 @@ h4 {
     border-radius: 1.5rem;
   }
 
-  .faq-content-col,
   .faq-content-intro,
   .faq-accordion-wrap {
     max-width: 40rem;
@@ -1520,20 +1506,37 @@ h4 {
   }
 }
 
-/* Desktop — 2 colonne, testo a sinistra nella colonna destra */
+/* Desktop — 2 colonne: image left, heading + questions right */
 @media (min-width: 1024px) {
   .faq-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
     align-items: start;
     justify-items: stretch;
     gap: 3rem;
   }
 
+  .faq-content-intro {
+    grid-column: 2;
+    grid-row: 1;
+    max-width: none;
+    margin-inline: 0;
+  }
+
   .faq-visual-col {
+    grid-column: 1;
+    grid-row: 1;
     max-width: none;
     align-self: start;
     justify-content: flex-start;
     height: fit-content;
+  }
+
+  .faq-accordion-wrap {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: none;
+    margin-inline: 0;
   }
 
   .faq-visual-single {
@@ -1555,17 +1558,6 @@ h4 {
     max-height: var(--faq-visual-h) !important;
     margin-top: var(--faq-visual-offset, 0) !important;
     overflow: hidden;
-  }
-
-  .faq-content-col {
-    max-width: none;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .faq-content-intro,
-  .faq-accordion-wrap {
-    max-width: none;
   }
 
   .faq-accordion-wrap {

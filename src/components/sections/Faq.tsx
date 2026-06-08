@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { HelpCircle } from "lucide-react";
 import { Accordion } from "@/components/ui/Accordion";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PAGE_GUTTER, PAGE_INNER } from "@/lib/layout";
@@ -142,6 +141,15 @@ export function Faq() {
     >
       <div className={cn(PAGE_GUTTER, PAGE_INNER)}>
         <div className="faq-grid">
+          <FadeIn className="faq-content-intro w-full max-md:mx-auto max-md:items-center max-md:text-center">
+            <div ref={introRef}>
+              <p className="faq-badge type-eyebrow px-4 py-1.5">FAQ</p>
+              <h2 id="faq-heading" className="faq-heading text-display-h2">
+                Frequently Asked Questions
+              </h2>
+            </div>
+          </FadeIn>
+
           <FadeIn className="faq-visual-col w-full">
             <div
               className={cn(
@@ -165,23 +173,9 @@ export function Faq() {
             </div>
           </FadeIn>
 
-          <div className="faq-content-col mx-auto max-md:items-center max-md:text-center">
-            <FadeIn className="faq-content-intro w-full">
-              <div ref={introRef}>
-                <p className="faq-badge type-eyebrow items-center gap-2 px-4 py-1.5">
-                  <HelpCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                  FAQ
-                </p>
-                <h2 id="faq-heading" className="faq-heading text-display-h2">
-                  Frequently Asked Questions
-                </h2>
-              </div>
-            </FadeIn>
-
-            <div className="faq-accordion-wrap w-full max-md:mx-auto">
-              <div ref={accordionWrapRef}>
-                <Accordion items={accordionItems} variant="faq" />
-              </div>
+          <div className="faq-accordion-wrap w-full max-md:mx-auto">
+            <div ref={accordionWrapRef}>
+              <Accordion items={accordionItems} variant="faq" />
             </div>
           </div>
         </div>
