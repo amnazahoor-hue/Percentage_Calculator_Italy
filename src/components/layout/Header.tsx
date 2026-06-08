@@ -173,6 +173,15 @@ export function Header() {
     return pathname === link.href;
   };
 
+  const handleLogoClick = useCallback(
+    (event: React.MouseEvent<HTMLAnchorElement>) => {
+      if (pathname !== "/") return;
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+    },
+    [pathname, reducedMotion]
+  );
+
   return (
     <header className="sticky top-0 z-50 w-full">
       <div
@@ -200,7 +209,8 @@ export function Header() {
             {/* Logo — left edge */}
             <Link
               href="/"
-              className="header-logo group flex shrink-0 items-center gap-3 rounded-2xl py-1 pr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-safe:transition-transform motion-safe:hover:scale-[1.02] md:gap-4"
+              onClick={handleLogoClick}
+              className="header-logo group relative z-20 flex shrink-0 cursor-pointer items-center gap-3 rounded-2xl py-1 pr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-safe:transition-transform motion-safe:hover:scale-[1.02] md:gap-4"
               aria-label="Percentuale — Back to home"
             >
               <span className="relative flex shrink-0 items-center justify-center">

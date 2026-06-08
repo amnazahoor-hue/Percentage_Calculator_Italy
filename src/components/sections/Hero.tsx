@@ -5,12 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { HeroCalcBackdrop } from "@/components/sections/HeroCalcBackdrop";
 import { HeroPercentDecor } from "@/components/sections/HeroPercentDecor";
-import {
-  HERO_CALC_MAX_H,
-  HERO_CALC_WIDTH,
-  HERO_GUTTER,
-  HERO_INNER,
-} from "@/lib/layout";
+import { HERO_CALC_WIDTH, HERO_GUTTER, HERO_INNER } from "@/lib/layout";
 import { cn } from "@/lib/cn";
 import { Gift, Percent, Play, Timer } from "lucide-react";
 
@@ -36,7 +31,7 @@ export function Hero() {
         "min-h-[calc(100svh-4.25rem)] border-b border-border/40",
         "overflow-x-clip py-8 sm:py-10",
         "md:min-h-0 md:py-10",
-        "xl:h-[calc(100svh-5rem)] xl:max-h-[calc(100svh-5rem)] xl:overflow-hidden xl:pt-2 xl:pb-5 2xl:pt-3 2xl:pb-6"
+        "xl:min-h-[calc(100svh-5rem)] xl:overflow-visible xl:pt-2 xl:pb-5 2xl:pt-3 2xl:pb-6"
       )}
       aria-labelledby="hero-heading"
     >
@@ -121,9 +116,8 @@ export function Hero() {
           <div className="flex min-h-0 w-full min-w-0 items-start justify-center xl:justify-end">
             <div
               className={cn(
-                "hero-calc-stage relative flex w-full max-h-full items-start justify-center xl:justify-end",
-                HERO_CALC_WIDTH,
-                HERO_CALC_MAX_H
+                "hero-calc-stage relative flex w-full items-start justify-center xl:justify-end",
+                HERO_CALC_WIDTH
               )}
             >
               <HeroCalcBackdrop />

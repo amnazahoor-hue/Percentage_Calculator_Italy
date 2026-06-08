@@ -12,5 +12,3 @@ export const HERO_INNER = PAGE_INNER;
 export const HERO_CALC_WIDTH =
   "relative z-10 flex w-full max-w-full flex-col xl:max-w-[min(100%,30rem)] 2xl:max-w-[min(100%,34rem)]";
 
-export const HERO_CALC_MAX_H =
-  "max-h-[calc(100svh-5rem)] sm:max-h-[calc(100svh-5.5rem)] xl:max-h-full";

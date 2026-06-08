@@ -49,7 +49,7 @@ export function HowItWorks() {
               </p>
               <h2
                 id="how-heading"
-                className="text-display-h2 mt-5 text-white"
+                className="how-heading text-display-h2 mt-5 text-white"
               >
                 3 Simple Steps To Calculate
               </h2>

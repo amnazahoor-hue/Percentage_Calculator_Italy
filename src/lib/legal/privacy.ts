@@ -2,83 +2,116 @@ import type { LegalSection } from "./types";
 
 export const privacySections: LegalSection[] = [
   {
-    id: "introduzione",
+    id: "introduction",
     title: "Introduction",
     content: [
-      "This Privacy Policy describes how Percentuale collects, uses, stores, and protects the personal data of users who visit the website and use related services, in accordance with Regulation (EU) 2016/679 (GDPR) and applicable Italian law, including Legislative Decree 196/2003 as amended by Legislative Decree 101/2018.",
-      "Please read this document carefully to understand our practices and your rights. By using the site, you accept the practices described in this policy, except where the law requires separate consent for specific processing activities.",
+      "This Privacy Policy explains how Percentuale («we», «us», or «the site») collects, uses, stores, and protects personal data when you visit our website and use our free online percentage calculator and related services.",
+      "We process data in accordance with Regulation (EU) 2016/679 (GDPR), applicable Italian law including Legislative Decree 196/2003 as amended by Legislative Decree 101/2018, and ePrivacy rules where relevant.",
+      "By using Percentuale, you acknowledge the practices described in this policy. Where the law requires separate consent — for example, for non-essential analytics cookies — we will request it through an appropriate mechanism before activating such tools.",
     ],
   },
   {
-    id: "dati-raccolti",
+    id: "data-controller",
+    title: "Data controller",
+    content: [
+      "The data controller for personal data collected through Percentuale is the operator of the website published at percentuale.it.",
+      "For privacy requests, GDPR rights, or questions about this policy, contact us at {contactEmail} or via the Contact page with the subject line «Privacy». We will respond within the time limits set out in Article 12 GDPR, generally within one month.",
+    ],
+  },
+  {
+    id: "data-we-collect",
     title: "Data we collect",
     content: [
-      "Technical browsing data: IP address (possibly anonymized), browser type, operating system, pages visited, date and time of access, referrer, and session data collected via technical cookies and aggregated analytics tools, where enabled.",
-      "Voluntarily provided data: name, email address, subject, and message content when you complete the Contact form. We do not intentionally collect special categories of data (Article 9 GDPR) through the site's standard forms.",
-      "Calculation data: values entered in the percentage calculator are processed in the user's browser to produce the result and are not sent to our servers for calculation purposes, unless explicitly communicated otherwise if future features require server-side processing.",
+      "Technical browsing data: IP address (which may be truncated or anonymized by analytics providers), browser type and version, operating system, device type, pages visited, session duration, referrer URL, and approximate geographic region. This data is collected through server logs, technical cookies, and analytics tools where enabled.",
+      "Voluntarily provided data: name, email address, subject, and message body when you submit the Contact form. Do not send special categories of personal data (Article 9 GDPR) unless strictly necessary and lawful.",
+      "Calculator input data: numbers and modes you enter in the percentage calculator are processed locally in your browser to produce results. They are not transmitted to our servers for calculation purposes.",
+      "Theme and interface preferences: if you switch between light and dark mode, your choice may be stored locally in your browser (for example via localStorage) to remember your preference on return visits. This data stays on your device.",
     ],
   },
   {
-    id: "utilizzo",
+    id: "how-we-use-data",
     title: "How we use data",
     content: [
-      "Data is processed to: provide and improve the web service; respond to requests sent via the contact form; ensure security and prevent abuse; comply with legal obligations; and, where the user has given consent to non-technical cookies where required, analyze site use in aggregated form to optimize content and performance.",
-      "The legal bases for processing include performance of pre-contractual or contractual measures at the data subject's request (Art. 6(1)(b) GDPR), the controller's legitimate interests (Art. 6(1)(f)) for security and service improvement, consent (Art. 6(1)(a)) for non-essential analytics/marketing cookies, and compliance with legal obligations (Art. 6(1)(c)).",
+      "We use personal and technical data to: operate and secure the website; deliver calculator functionality; respond to contact requests; prevent abuse and fraud; comply with legal obligations; improve content, performance, and usability; and, where permitted and consented to, analyze aggregated traffic patterns.",
+      "Legal bases include: performance of measures at your request (Art. 6(1)(b) GDPR) for contact enquiries; legitimate interests (Art. 6(1)(f)) for security, service improvement, and aggregated analytics; consent (Art. 6(1)(a)) for non-essential cookies; and legal obligation (Art. 6(1)(c)) where applicable.",
     ],
   },
   {
-    id: "cookie",
+    id: "share-and-export",
+    title: "Share, PDF export, and email features",
+    content: [
+      "After calculating a result, you may optionally share or export it using built-in tools: WhatsApp share, PDF download, or your device's email client.",
+      "WhatsApp sharing opens WhatsApp (web or app) with a pre-filled message containing your calculation summary and a link to Percentuale. We do not receive the content of messages you send through WhatsApp.",
+      "PDF export generates a document in your browser using your current result, formula, and inputs. The PDF is saved locally on your device; we do not store exported PDFs on our servers.",
+      "The email option opens your default mail application with a pre-filled subject and body. You choose whether to send the message and to whom. We do not access your email drafts or sent messages.",
+      "Because these features run on your device or through third-party apps you control, you are responsible for reviewing the content before sharing it with others.",
+    ],
+  },
+  {
+    id: "cookies",
     title: "Cookies and similar technologies",
     content: [
-      "We use technical cookies necessary for the site to function (e.g. session preferences, security). Third-party analytics cookies (Google Analytics, Microsoft Clarity) may be activated only after keys are configured by the administrator and, where required by applicable law, following a consent banner compliant with the guidelines of the Italian Data Protection Authority (Garante) and the Digital Markets Act where applicable.",
-      "You can manage cookie preferences in your browser settings and, when available, via the site's consent panel. Disabling certain cookies may limit functionality or prevent collection of aggregated statistics.",
+      "We use strictly necessary technical mechanisms for site operation, including session stability, security, and remembered theme preferences where implemented.",
+      "Analytics cookies (Google Analytics 4, Microsoft Clarity) may be activated only when configured by the site administrator and, where required by law, after you provide consent through a compliant cookie notice.",
+      "You can manage or delete cookies through your browser settings. Blocking certain cookies may limit functionality or prevent collection of aggregated statistics.",
     ],
   },
   {
     id: "analytics",
     title: "Google Analytics and Microsoft Clarity",
     content: [
-      "Google Analytics (GA4) allows analysis of traffic in aggregated form, such as most visited pages, average session duration, and approximate geographic origin. Data may be transferred to servers located outside the EU; Google adopts compliance tools such as Standard Contractual Clauses where applicable.",
-      "Microsoft Clarity records aggregated interactions such as scroll and clicks (heatmaps) to improve usability. We do not use these tools for invasive individual profiling or for automated decisions with legal effects on the user.",
-      "API keys and measurement IDs must be entered by the site operator in the environment variables documented in the README. Until activated, such scripts do not send data to third parties.",
+      "Google Analytics 4 helps us understand aggregated traffic: popular pages, average session length, and general acquisition channels. Data may be processed on servers outside the EU; Google applies appropriate safeguards such as Standard Contractual Clauses where required.",
+      "Microsoft Clarity provides aggregated interaction insights (for example scroll depth and click patterns) to improve usability. It is not used for invasive individual profiling or automated decisions with legal effects on you.",
+      "Measurement IDs are configured via environment variables by the site operator. Until activated, these scripts do not send data to third parties.",
     ],
   },
   {
-    id: "conservazione",
+    id: "retention",
     title: "Data retention",
     content: [
-      "Contact messages are retained for as long as necessary to handle the request and, where applicable, to comply with legal obligations or legal defense, generally not longer than 24 months unless disputes are ongoing.",
-      "Technical logs and aggregated analytics data are retained according to periods set by the respective providers (e.g. GA4) or for a shorter duration configured by the administrator.",
+      "Contact form messages are retained for as long as needed to handle your request and for legal defense or compliance, generally up to 24 months unless a longer period is required by ongoing disputes or law.",
+      "Server logs and aggregated analytics are retained according to provider defaults or shorter periods configured by the administrator.",
+      "Calculator values are not retained on our servers after you close the page, unless future features explicitly state otherwise in an updated policy.",
     ],
   },
   {
-    id: "diritti",
-    title: "Your rights (GDPR)",
+    id: "your-rights",
+    title: "Your rights under GDPR",
     content: [
-      "As a data subject, you have the right of access, rectification, erasure, restriction of processing, data portability (where applicable), objection to processing based on legitimate interest, and withdrawal of consent without affecting the lawfulness of processing based on consent given before withdrawal.",
-      "You may lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali) at www.garanteprivacy.it. To exercise your rights, write via the Contact page specifying your request; we may ask for additional information to verify your identity.",
+      "You have the right to access, rectify, erase, restrict processing, object (where based on legitimate interest), data portability (where applicable), and withdraw consent without affecting prior lawful processing.",
+      "You may lodge a complaint with the Italian Data Protection Authority (Garante) at www.garanteprivacy.it.",
+      "To exercise your rights, email {contactEmail} or use the Contact page. We may request reasonable identity verification before fulfilling sensitive requests.",
     ],
   },
   {
-    id: "sicurezza",
+    id: "children",
+    title: "Children's privacy",
+    content: [
+      "Percentuale is a general-purpose educational and utility tool. We do not knowingly collect personal data from children under 16 without appropriate parental consent where required by law.",
+      "If you believe a child has submitted personal data through our Contact form without authorization, contact us and we will take appropriate steps to delete it.",
+    ],
+  },
+  {
+    id: "security",
     title: "Security",
     content: [
-      "We adopt appropriate technical and organizational measures, including HTTPS connections, security updates to the framework, limited administrative access, and sound development practices, to protect data from unauthorized access, loss, or alteration.",
-      "No system is completely invulnerable; please do not send unnecessary sensitive data via the contact form and protect the credentials on your devices.",
+      "We implement appropriate technical and organizational measures, including HTTPS, framework security updates, restricted administrative access, and secure development practices, to protect data against unauthorized access, loss, or alteration.",
+      "No online system is completely risk-free. Avoid sending unnecessary sensitive information via the contact form and keep your devices protected.",
     ],
   },
   {
-    id: "modifiche-privacy",
+    id: "international-transfers",
+    title: "International transfers",
+    content: [
+      "Where data is processed outside the European Economic Area by analytics or hosting providers, we rely on adequacy decisions, Standard Contractual Clauses, or other mechanisms recognized under GDPR Chapter V.",
+    ],
+  },
+  {
+    id: "policy-changes",
     title: "Changes to this policy",
     content: [
-      "We may update this policy to reflect regulatory, technological, or organizational changes. The date of last update is shown at the top of the page. We recommend checking this section periodically.",
-    ],
-  },
-  {
-    id: "contatti-privacy",
-    title: "Contact",
-    content: [
-      "For privacy-related requests and to exercise GDPR rights, use the Contact form with the subject «Privacy» or the dedicated email published on that page. We will respond within the time limits set out in Article 12 GDPR, generally within one month, extendable where necessary.",
+      "We may update this Privacy Policy to reflect legal, technical, or organizational changes. The current version is always published on this page. We recommend reviewing it periodically.",
+      "Material changes affecting your rights may be highlighted on the homepage or through another appropriate channel.",
     ],
   },
 ];
